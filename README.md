@@ -4,12 +4,9 @@ RetrofitMVVM is a modern Android application that demonstrates the implementatio
 
 ## Screenshots
 
-Here's a look at the main screen:
-
-<p align="center">
-  <img src="docs/images/Screenshot_WorkingApp_bitcoinArticles.png" alt="Bitcoin Articles" width="300"/>
-  <img src="docs/images/Screenshot_WorkingApp_PixelPhones.png" alt="Pixel Phones" width="300"/>
-</p>
+| News Feed (Bitcoin) | News Feed (Pixel) |
+| :---: | :---: |
+| <img src="docs/images/Screenshot_WorkingApp_bitcoinArticles.png" width="320" alt="Bitcoin News Feed" /> | <img src="docs/images/Screenshot_WorkingApp_PixelPhones.png" width="320" alt="Pixel News Feed" /> |
 
 ## Features
 
