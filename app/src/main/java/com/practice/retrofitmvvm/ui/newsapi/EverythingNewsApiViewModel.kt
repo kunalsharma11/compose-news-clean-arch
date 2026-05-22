@@ -14,20 +14,22 @@ import kotlinx.coroutines.launch
 class EverythingNewsApiViewModel(private val topHeadlineRepository: TopHeadlineRepository): ViewModel() {
 
     private val _uiState = MutableStateFlow<UiState<List<Article>>>(UiState.Loading)
-
     val uiState: StateFlow<UiState<List<Article>>> = _uiState
 
     init {
-        fetchTopHeadlines()
+        searchNews(AppConstants.EVERYTHING_ABOUT_BITCOIN)
     }
 
-    private fun fetchTopHeadlines() {
+    fun searchNews(query: String) {
+        if (query.isEmpty()) return
+        
+        _uiState.value = UiState.Loading
         viewModelScope.launch {
-            topHeadlineRepository.getTopHeadlines(AppConstants.EVERYTHING_ABOUT_BITCOIN)
+            topHeadlineRepository.getTopHeadlines(query)
                 .catch { e ->
                     _uiState.value = UiState.Error(e.toString())
                 }
-                .collect{
+                .collect {
                     _uiState.value = UiState.Success(it)
                 }
         }

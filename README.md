@@ -1,41 +1,40 @@
 # RetrofitMVVM
 
-RetrofitMVVM is a modern Android application that demonstrates the implementation of the MVVM architectural pattern using Kotlin, **Jetpack Compose** for UI, Retrofit for networking, and Dagger 2 for dependency injection. The app fetches and displays news articles from the NewsAPI.
+RetrofitMVVM is a high-performance Android news application built with **Jetpack Compose**, **Retrofit**, and **Dagger 2**. It demonstrates modern Android development best practices, featuring a clean MVVM architecture and a sleek, professional UI for consuming news from the NewsAPI.
 
 ## Screenshots
 
-| News Feed (Bitcoin) | News Feed (Pixel) |
+| News Feed (Bitcoin) | Search Results (Pixel) |
 | :---: | :---: |
-| <img src="docs/images/Screenshot_WorkingApp_bitcoinArticles.png" width="320" alt="Bitcoin News Feed" /> | <img src="docs/images/Screenshot_WorkingApp_PixelPhones.png" width="320" alt="Pixel News Feed" /> |
+| <img src="docs/images/Screenshot_WorkingApp_bitcoinArticles.png" width="320" alt="Bitcoin News Feed" /> | <img src="docs/images/Screenshot_WorkingApp_PixelPhones.png" width="320" alt="Pixel Search Results" /> |
 
-## Features
+## Key Features
 
-- **Jetpack Compose UI**: Entirely built with modern declarative UI components.
-- **News Fetching**: Fetches the latest news articles using the NewsAPI "everything" endpoint.
-- **Search Functionality**: Allows searching for specific topics via query parameters.
-- **Reactive UI**: Uses StateFlow and Coroutines for a reactive and efficient data flow.
-- **Modern Architecture**: Clean separation of concerns using MVVM.
-- **Dependency Injection**: Decoupled architecture using Dagger 2.
+- **Jetpack Compose UI**: A fully declarative UI implementation using Material 3 components.
+- **Dynamic Search**: Integrated search bar in the TopAppBar allowing users to fetch news by keywords.
+- **Professional Theming**: Custom-designed Material 3 theme with professional Navy/Blue branding and support for **Dark Mode**.
+- **Reactive State Management**: Leverages `StateFlow` and `Coroutines` to manage UI state seamlessly.
+- **In-App Browsing**: Opens full articles using **Android Custom Tabs** for a premium user experience.
+- **Dependency Injection**: Robust architecture powered by Dagger 2 for decoupled and testable code.
 
 ## Tech Stack
 
 - **Language**: [Kotlin](https://kotlinlang.org/)
-- **UI Framework**: [Jetpack Compose](https://developer.android.com/jetpack/compose)
+- **UI Framework**: [Jetpack Compose](https://developer.android.com/jetpack/compose) (Material 3)
 - **Networking**: [Retrofit](https://square.github.io/retrofit/) & [Gson](https://github.com/google/gson)
 - **Dependency Injection**: [Dagger 2](https://dagger.dev/)
 - **Image Loading**: [Coil](https://coil-kt.github.io/coil/compose/)
-- **Architecture**: MVVM (Model-View-ViewModel)
+- **Architecture**: MVVM (Model-View-ViewModel) + Repository Pattern
 - **Concurrency**: [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) & [Flow](https://kotlinlang.org/docs/flow.html)
-- **UI Components**: Material 3, Scaffold, LazyColumn, Cards
 
 ## Architecture
 
-The project follows the **Clean Architecture** principles within the MVVM pattern:
+The project adheres to **Clean Architecture** principles within the MVVM pattern:
 
-- **Model**: Data structures and Repository pattern for data handling.
-- **View (Compose)**: Composable functions that define the UI based on the state.
-- **ViewModel**: Manages UI state and business logic, exposing data via StateFlow.
-- **DI (Dependency Injection)**: Centralized dependency management using Dagger modules and components.
+- **Data Layer**: Handles networking (`Retrofit`), data models, and the `Repository` pattern.
+- **UI Layer**: Composable functions that observe state and react to user inputs.
+- **ViewModel Layer**: Manages the business logic and exposes a lifecycle-aware `UiState` via `StateFlow`.
+- **DI Layer**: Manages object lifecycles and dependency graph using Dagger.
 
 ## Getting Started
 
@@ -49,19 +48,19 @@ The project follows the **Clean Architecture** principles within the MVVM patter
 
 1. Clone the repository.
 2. Open the project in Android Studio.
-3. Create or open the `local.properties` file in the root directory.
-4. Add your NewsAPI key:
+3. Add your NewsAPI key to `local.properties` (this file is git-ignored for security):
    ```properties
    NEWS_API_KEY=your_api_key_here
    ```
-5. Sync the project with Gradle files.
-6. Build and run the app.
+4. Sync the project with Gradle files.
+5. Build and run the app.
 
 ## Project Structure
 
-- `data/`: API services, models, and data repositories.
-- `di/`: Dagger components and modules.
+- `data/`: Network services and repositories.
+- `di/`: Dagger components, scopes, and modules.
 - `ui/`: 
     - `newsapi/`: Compose screens and ViewModels.
-    - `theme/`: Theme definitions (Color, Type, Theme).
+    - `theme/`: Professional branding (Color, Typography, Theme).
+    - `base/`: Common UI utilities like `UiState`.
 - `utils/`: Constants and helper classes.
