@@ -2,7 +2,6 @@ package com.practice.retrofitmvvm.ui.newsapi
 
 import android.net.Uri
 import androidx.browser.customtabs.CustomTabsIntent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -20,11 +19,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.practice.retrofitmvvm.R
 import com.practice.retrofitmvvm.data.model.Article
 import com.practice.retrofitmvvm.ui.base.UiState
 
@@ -45,7 +46,7 @@ fun NewsApiScreen(viewModel: EverythingNewsApiViewModel) {
                     CenterAlignedTopAppBar(
                         title = {
                             Text(
-                                "Today's Headlines",
+                                stringResource(id = R.string.app_name),
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onPrimary
                             )

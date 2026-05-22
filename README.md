@@ -1,6 +1,6 @@
-# RetrofitMVVM
+# Daily Headlines
 
-RetrofitMVVM is a high-performance Android news application built with **Jetpack Compose**, **Retrofit**, and **Dagger 2**. It demonstrates modern Android development best practices, featuring a clean MVVM architecture and a sleek, professional UI for consuming news from the NewsAPI.
+**Daily Headlines** is a high-performance Android news application built with **Jetpack Compose**, **Retrofit**, and **Dagger 2**. It demonstrates modern Android development best practices, featuring a clean MVVM architecture and a sleek, professional UI for consuming news from the NewsAPI.
 
 ## Screenshots
 
