@@ -1,18 +1,17 @@
 package com.practice.retrofitmvvm.di.module
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.ComponentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.practice.retrofitmvvm.data.repository.TopHeadlineRepository
 import com.practice.retrofitmvvm.di.ActivityContext
 import com.practice.retrofitmvvm.ui.base.ViewModelProviderFactory
-import com.practice.retrofitmvvm.ui.newsapi.EverythingNewsApiAdapter
 import com.practice.retrofitmvvm.ui.newsapi.EverythingNewsApiViewModel
 import dagger.Module
 import dagger.Provides
 
 @Module
-class ActivityModule(private val activity: AppCompatActivity) {
+class ActivityModule(private val activity: ComponentActivity) {
 
     @ActivityContext
     @Provides
@@ -27,7 +26,4 @@ class ActivityModule(private val activity: AppCompatActivity) {
                 EverythingNewsApiViewModel(topHeadlineRepository)
             })[EverythingNewsApiViewModel::class.java]
     }
-
-    @Provides
-    fun provideTopHeadlineAdapter() = EverythingNewsApiAdapter(ArrayList())
 }

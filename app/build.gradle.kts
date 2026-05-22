@@ -43,6 +43,11 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
 
     buildTypes {
@@ -87,4 +92,12 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:2.48.1")
     implementation("androidx.browser:browser:1.8.0")
 
+    // Compose dependencies
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.activity.compose)
+    implementation("io.coil-kt:coil-compose:2.6.0")
 }

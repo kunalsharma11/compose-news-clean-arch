@@ -1,6 +1,6 @@
 # RetrofitMVVM
 
-RetrofitMVVM is a modern Android application that demonstrates the implementation of the MVVM architectural pattern using Kotlin, Retrofit for networking, and Dagger 2 for dependency injection. The app fetches and displays news articles from the NewsAPI.
+RetrofitMVVM is a modern Android application that demonstrates the implementation of the MVVM architectural pattern using Kotlin, **Jetpack Compose** for UI, Retrofit for networking, and Dagger 2 for dependency injection. The app fetches and displays news articles from the NewsAPI.
 
 ## Screenshots
 
@@ -10,36 +10,38 @@ RetrofitMVVM is a modern Android application that demonstrates the implementatio
 
 ## Features
 
+- **Jetpack Compose UI**: Entirely built with modern declarative UI components.
 - **News Fetching**: Fetches the latest news articles using the NewsAPI "everything" endpoint.
 - **Search Functionality**: Allows searching for specific topics via query parameters.
 - **Reactive UI**: Uses StateFlow and Coroutines for a reactive and efficient data flow.
-- **Modern UI**: Built with RecyclerView, ConstraintLayout, and Material Design components.
+- **Modern Architecture**: Clean separation of concerns using MVVM.
 - **Dependency Injection**: Decoupled architecture using Dagger 2.
 
 ## Tech Stack
 
 - **Language**: [Kotlin](https://kotlinlang.org/)
+- **UI Framework**: [Jetpack Compose](https://developer.android.com/jetpack/compose)
 - **Networking**: [Retrofit](https://square.github.io/retrofit/) & [Gson](https://github.com/google/gson)
 - **Dependency Injection**: [Dagger 2](https://dagger.dev/)
-- **Image Loading**: [Glide](https://github.com/bumptech/glide)
+- **Image Loading**: [Coil](https://coil-kt.github.io/coil/compose/)
 - **Architecture**: MVVM (Model-View-ViewModel)
 - **Concurrency**: [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) & [Flow](https://kotlinlang.org/docs/flow.html)
-- **UI Components**: ViewBinding, RecyclerView, Material Components
+- **UI Components**: Material 3, Scaffold, LazyColumn, Cards
 
 ## Architecture
 
 The project follows the **Clean Architecture** principles within the MVVM pattern:
 
 - **Model**: Data structures and Repository pattern for data handling.
-- **View**: Activities and Adapters that handle UI rendering and user interactions.
-- **ViewModel**: Acts as a bridge between the View and the Model, managing UI state and business logic.
+- **View (Compose)**: Composable functions that define the UI based on the state.
+- **ViewModel**: Manages UI state and business logic, exposing data via StateFlow.
 - **DI (Dependency Injection)**: Centralized dependency management using Dagger modules and components.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Android Studio Iguana or newer.
+- Android Studio Ladybug or newer.
 - Minimum SDK Level 31.
 - An API Key from [NewsAPI.org](https://newsapi.org/).
 
@@ -59,5 +61,7 @@ The project follows the **Clean Architecture** principles within the MVVM patter
 
 - `data/`: API services, models, and data repositories.
 - `di/`: Dagger components and modules.
-- `ui/`: Feature-specific UI components (Activity, ViewModel, Adapter).
+- `ui/`: 
+    - `newsapi/`: Compose screens and ViewModels.
+    - `theme/`: Theme definitions (Color, Type, Theme).
 - `utils/`: Constants and helper classes.
