@@ -41,7 +41,6 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
         buildConfig = true
         compose = true
     }
@@ -71,25 +70,25 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // Added dependencies
-    implementation("androidx.recyclerview:recyclerview:1.4.0")
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    // Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
-
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.1")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.9.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.1")
+
+    // DI
     implementation("com.google.dagger:dagger:2.48.1")
     kapt("com.google.dagger:dagger-compiler:2.48.1")
+    
+    // Custom Tabs for news links
     implementation("androidx.browser:browser:1.8.0")
 
     // Compose dependencies
@@ -99,5 +98,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.activity.compose)
+    
+    // Compose Image Loading
     implementation("io.coil-kt:coil-compose:2.6.0")
 }
