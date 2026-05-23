@@ -7,6 +7,7 @@
 | Bitcoin News | EV Cars News | Android News |
 | :---: | :---: | :---: |
 | <img src="screenshots/bitcoin-news.png" width="250" alt="Bitcoin News Feed" /> | <img src="screenshots/ev-cars-news.png" width="250" alt="EV Cars News Feed" /> | <img src="screenshots/android-news.png" width="250" alt="Android News Feed" /> |
+- based on searched keywords: Bitcoin, ev cars and android respectively.
 
 ## Key Features
 
